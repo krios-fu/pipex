@@ -5,6 +5,7 @@ Este proyecto es útil para descubrir el funcionamiento de un mecanismo de UNIX
 **Ejmplo en una terminal shel**
 
 ` $> < archivo1 comando1 | comando2 > archivo2`
+
 ` $> < initfile grep a1 | wc > outfile`
 
 **Hacer:** 
@@ -14,6 +15,7 @@ Este proyecto es útil para descubrir el funcionamiento de un mecanismo de UNIX
 **Para ejecutar:** 
 
 **eje** `./pipex archivo1 comando1 comando2 archivo2` 
+
 **eje:** `./pipex initfile "greap a1" "wc" outfile` 
 
 
