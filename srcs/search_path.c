@@ -6,20 +6,24 @@
 /*   By: krios-fu <krios-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/09 15:56:22 by krios-fu          #+#    #+#             */
-/*   Updated: 2021/06/09 19:30:56 by krios-fu         ###   ########.fr       */
+/*   Updated: 2021/06/10 03:31:58 by krios-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pipex.h"
+#include "../pipex.h"
 
-void	free_matrix(char **matrix)
+static char *mini_path(char *envp[])
 {
-	int	i;
+	int i;
 
 	i = 0;
-	while(matrix[i])
-		free(matrix[i++]);
-	free(matrix);	
+	while (envp[i])
+	{
+		if(!ft_strncmp(envp[i], "PATH=", 5))
+			return (envp[i]);
+		i++;
+	}
+	return(NULL);
 }
 
 short	get_path(char *cmd, char *envp[], char **f_path)
@@ -31,7 +35,7 @@ short	get_path(char *cmd, char *envp[], char **f_path)
 	int		fd;
 	
 	i = 0;
-	paths = ft_split(ft_strchr(envp[6], '/') , ':');
+	paths = ft_split(ft_strchr(mini_path(envp), '/') , ':'); /* 6 mac  */
 	while(paths[i])
 	{
 		path = ft_strjoin(paths[i], "/");
