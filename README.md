@@ -14,9 +14,9 @@ Este proyecto es útil para descubrir el funcionamiento de un mecanismo de UNIX
 
 **Para ejecutar:** 
 
-**eje** `./pipex archivo1 comando1 comando2 archivo2` 
+**eje:** `./pipex archivo1 comando1 comando2 archivo2` 
 
-**eje:** `./pipex initfile "greap a1" "wc" outfile` 
+**exec:** `./pipex initfile "greap a1" "wc" outfile` 
 
 
 
