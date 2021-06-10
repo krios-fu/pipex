@@ -6,12 +6,11 @@
 /*   By: krios-fu <krios-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/22 17:40:49 by krios-fu          #+#    #+#             */
-/*   Updated: 2021/03/31 16:41:34 by krios-fu         ###   ########.fr       */
+/*   Updated: 2021/06/10 15:20:45 by krios-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <stdio.h>
+#include "../include/pipex.h"
 
 static size_t	ft_numstring(const char *s, char c)
 {

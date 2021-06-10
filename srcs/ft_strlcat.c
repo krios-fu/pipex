@@ -1,21 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front_bunus.c                            :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: krios-fu <krios-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/29 02:48:40 by krios-fu          #+#    #+#             */
-/*   Updated: 2020/01/29 15:36:17 by krios-fu         ###   ########.fr       */
+/*   Created: 2020/01/13 16:15:50 by krios-fu          #+#    #+#             */
+/*   Updated: 2021/06/10 15:20:53 by krios-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../include/pipex.h"
 
-void	ft_lstadd_front(t_list **alst, t_list *new)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	if (alst == NULL || new == NULL)
-		return ;
-	new->next = *alst;
-	*alst = new;
+	size_t	len;
+	size_t	i;
+
+	len = 0;
+	i = 0;
+	while (dst[i] && i < dstsize)
+		i++;
+	len = i;
+	while (src[i - len] && i + 1 < dstsize)
+	{
+		dst[i] = src[i - len];
+		i++;
+	}
+	if (len < dstsize)
+		dst[i] = '\0';
+	return (len + ft_strlen(src));
 }

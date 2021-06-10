@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: krios-fu <krios-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/15 14:25:27 by krios-fu          #+#    #+#             */
-/*   Updated: 2020/01/27 21:16:33 by krios-fu         ###   ########.fr       */
+/*   Created: 2020/01/25 17:56:01 by krios-fu          #+#    #+#             */
+/*   Updated: 2021/06/10 15:20:42 by krios-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../include/pipex.h"
 
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+void	ft_putstr_fd(char *s, int fd)
 {
 	size_t	i;
 
-	if (*needle == 0)
-		return ((char *)haystack);
-	i = ft_strlen(needle);
-	while (*haystack && i <= len--)
+	i = 0;
+	if (s == NULL)
+		return ;
+	while (s[i] != '\0')
 	{
-		if (!(ft_strncmp((char *)haystack, (char *)needle, i)))
-			return ((char *)haystack);
-		haystack++;
+		ft_putchar_fd(s[i], fd);
+		i++;
 	}
-	return (NULL);
 }

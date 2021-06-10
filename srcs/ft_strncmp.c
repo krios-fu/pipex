@@ -1,37 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: krios-fu <krios-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/18 13:41:09 by krios-fu          #+#    #+#             */
-/*   Updated: 2021/03/31 16:18:52 by krios-fu         ###   ########.fr       */
+/*   Created: 2020/01/15 13:57:00 by krios-fu          #+#    #+#             */
+/*   Updated: 2021/06/10 15:21:11 by krios-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../include/pipex.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	char	*s2;
-	size_t	i;
+	unsigned char	*ss1;
+	unsigned char	*ss2;
+	size_t			i;
+	size_t			j;
 
+	ss1 = (unsigned char *)s1;
+	ss2 = (unsigned char *)s2;
 	i = 0;
-	if (!s)
-		return (NULL);
-	if (*s == '\0')
-		return (ft_strdup(""));
-	if (start > ft_strlen(s))
-		return (ft_strdup(""));
-	s2 = malloc(sizeof(char) * len + 1);
-	if (!s2)
-		return (NULL);
-	while (i < len)
-	{
-		s2[i] = s[start + i];
+	j = 0;
+	if (n == 0)
+		return (0);
+	while ((ss1[i] == ss2[i] && ss1[i] != '\0') && i < n)
 		i++;
-	}
-	s2[i] = '\0';
-	return (s2);
+	if (i == n)
+		i--;
+	j = ss1[i] - ss2[i];
+	return (j);
 }

@@ -1,34 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: krios-fu <krios-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/29 03:26:17 by krios-fu          #+#    #+#             */
-/*   Updated: 2021/03/31 16:45:29 by krios-fu         ###   ########.fr       */
+/*   Created: 2020/01/08 11:17:34 by krios-fu          #+#    #+#             */
+/*   Updated: 2021/06/10 15:21:01 by krios-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../include/pipex.h"
 
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	t_list	*list_n;
-	t_list	*ele_n;
+	size_t		len;
+	size_t		i;
 
-	if (!f || !lst)
-		return (NULL);
-	list_n = NULL;
-	while (lst)
+	i = 0;
+	if (!src)
+		return (0);
+	len = ft_strlen(src);
+	if (dstsize == 0)
+		return (len);
+	dstsize--;
+	while (dstsize > 0 && src[i] != '\0')
 	{
-		ele_n = ft_lstnew(f(lst->content));
-		if (!ele_n)
-		{
-			ft_lstclear(&list_n, del);
-		}
-		ft_lstadd_back(&list_n, ele_n);
-		lst = lst->next;
+		dst[i] = src[i];
+		i++;
+		dstsize--;
 	}
-	return (list_n);
+	dst[i] = '\0';
+	return (len);
 }

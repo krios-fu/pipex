@@ -1,33 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: krios-fu <krios-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/26 00:10:58 by krios-fu          #+#    #+#             */
-/*   Updated: 2021/03/31 16:20:47 by krios-fu         ###   ########.fr       */
+/*   Created: 2020/01/08 11:13:34 by krios-fu          #+#    #+#             */
+/*   Updated: 2021/06/10 15:21:07 by krios-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../include/pipex.h"
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+size_t	ft_strlen(const char *str)
 {
-	char	*newstr;
-	int		i;
+	size_t	count;
 
-	if (!s || !f)
-		return (NULL);
-	newstr = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
-	if (!newstr)
-		return (NULL);
-	i = 0;
-	while (s[i] != '\0')
-	{
-		newstr[i] = f(i, s[i]);
-		i++;
-	}
-	newstr[i] = '\0';
-	return (newstr);
+	count = 0;
+	while (str[count] != '\0')
+		count++;
+	return (count);
 }
