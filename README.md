@@ -1,8 +1,10 @@
 # pipex
+
 **Nota final:  100%** 
+
 Este proyecto es útil para descubrir el funcionamiento de un mecanismo de UNIX. Consiste en replicar en el lenguaje C el comportamiento de pipes y redireciones simples entre dos ficheros y dos comandos. 
 
-**Ejmplo en una terminal shel**
+**Ejemplo en una terminal shell**
 
 ` $> < archivo1 comando1 | comando2 > archivo2`
 
@@ -14,9 +16,6 @@ Este proyecto es útil para descubrir el funcionamiento de un mecanismo de UNIX
 
 **Para ejecutar:** 
 
-**eje:** `./pipex archivo1 comando1 comando2 archivo2` 
+**Ref:** `$> ./pipex archivo1 comando1 comando2 archivo2` 
 
-**exec:** `./pipex initfile "greap a1" "wc" outfile` 
-
-
-
+**Do:** `$> ./pipex initfile "greap a1" "wc" outfile` 
