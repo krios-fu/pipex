@@ -1,5 +1,5 @@
 # pipex
-Este proyecto es útil para descubrir el funcionamiento de un mecanismo de UNIX. Consiste en programar en el lenguaje C  el comportamiento de pipes entre dos comandos. 
+Este proyecto es útil para descubrir el funcionamiento de un mecanismo de UNIX. Consiste en programar en el lenguaje C el comportamiento de pipes y redireciones simpes entre dos ficheros y dos comandos. 
 
 **Nota final:  100%** 
 
